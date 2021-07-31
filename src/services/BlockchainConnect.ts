@@ -104,7 +104,7 @@ export default class BlockchainConnect {
     async getBalanceEther(address: string, precision: number = -1 ) : Promise<string> {
         const weiBal: string = await this.getBalance(address);
         const ether: string = ethers.utils.formatEther(weiBal);
-
+        console.log("BlockchainConnect::getBalanceEther - ", ether);
         if(precision === -1)
             return ether;
         else
